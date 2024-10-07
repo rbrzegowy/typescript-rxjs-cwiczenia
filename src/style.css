@@ -1,0 +1,96 @@
+:root {
+  /* color-scheme: light dark; */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --sidenav-padding: 30px;
+  --sidenav-min-width: calc(var(--sidenav-padding) * 2);
+  --card-shadow: 7px 4px 15px 0px #a5a5a56b;
+  --selected-nav-link: #e0aaa8;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to left, #43c6ac, #f8ffae);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: 1px solid #e5c8cc;
+  background: #f5dfe2;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 1px #dcdcdc8f;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #eee;
+}
+
+button:active {
+  background: #ddd;
+}
+
+.value {
+  font-weight: bold;
+}
+
+main {
+  margin-left: var(--sidenav-min-width);
+  padding: 20px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+h1 {
+  margin-left: 18px;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: normal;
+  margin-top: 0;
+  margin-left: 18px;
+  margin-bottom: 40px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 20px;
+}
+nav card {
+  padding: 10px 20px;
+  margin: 0;
+  min-width: unset;
+}
+
+card {
+  display: block;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: var(--card-shadow);
+  margin: 20px;
+  border-radius: 8px;
+  min-width: 150px;
+  max-width: 300px;
+}
+
+card header {
+  font-size: 1.25em;
+  margin: 0 0 30px 0;
+  font-weight: bold;
+}
+
+/* @media (prefers-color-scheme: dark) {
+} */

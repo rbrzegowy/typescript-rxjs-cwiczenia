@@ -1,0 +1,1 @@
+export type Order = { id: number, products: string[] }  
