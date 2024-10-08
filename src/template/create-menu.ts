@@ -11,5 +11,11 @@ export const createMenu = () => {
         </card>
         <card>
           <a href="operators2.html">Łączenie strumieni</a>
+        </card>
+        <card>
+          <a href="higher-order-operators.html">Strumienie w strumieniach</a>
+        </card>
+        <card>
+          <a href="shop.html">Sklepik</a>
         </card>`
 }

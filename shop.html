@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      card {
+        max-width: unset;
+      }
+      #product-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .product {
+        width: 200px;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid #f5f5f5;
+      }
+      .product div {
+        margin-bottom: 20px;
+      }
+    </style>
+    <title>Programowanie reaktywne z RxJS</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Sklepik</h1>
+      <nav></nav>
+      <section class="content">
+        <card>
+          <header>Polecane</header>
+          <content id="recommended"> TU WYPISZ POLECANE </content>
+        </card>
+        <card>
+          <header>Średnia ocen wybranych produktów</header>
+          <content id="average-rating"> TU WYPISZ ŚREDNIĄ Z OCEN</content>
+        </card>
+        <card>
+          <header>Koszyk</header>
+          <content id="cart">TU WYLISTUJ KOSZYK</content>
+        </card>
+        <card>
+          <header>Produkty</header>
+          <content>
+            <p class="search">
+              Wyszukiwarka: <input id="search-product" type="text" />
+            </p>
+            <section id="product-list">TU WYLISTUJ PRODUKTY</section>
+          </content>
+        </card>
+        <card>
+          <header>Paginacja</header>
+          <content>
+            <button id="paginate-prev">Poprzednie 10</button>
+            Wyświetlam od: <span id="paginate-from"></span>
+            <button id="paginate-next">Następne 10</button>
+          </content>
+        </card>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/shop.ts"></script>
+  </body>
+</html>

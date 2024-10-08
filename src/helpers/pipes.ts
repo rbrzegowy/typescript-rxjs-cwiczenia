@@ -15,7 +15,7 @@ export const writeToHtml = <T>(selector: string, config?: WriteToHtmlConfig) => 
     if (config?.add) {
       element.insertAdjacentHTML(config.add, valueToWrite)
     } else {
-      element.textContent = valueToWrite
+      element.innerHTML = valueToWrite
     }
   })
 }
