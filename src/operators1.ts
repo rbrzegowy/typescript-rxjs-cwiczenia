@@ -22,30 +22,21 @@ const picture$ = from(pictures)
 // Stwórz sekundnik(powinien emitować cokolwiek przez10 sekund)
 // interval, map
 
-// Stwórz strumień emitujący koordynaty myszy na stronie(przy kliknięciu)
-// ev.clientX
-const mouseClick$ = fromEvent(document, 'click')
+// Stwórz strumień emitujący koordynaty myszy na stronie (przy kliknięciu)
+// fromEvent, wykorzystaj właściwość ev.clientX
+const mouseClick$ = null
 
-const mouseMove2$ = new Subject<Event>()
-document.addEventListener('click', e => mouseMove2$.next(e))
-
-// Licznik kliknięć: emituj kolejną liczbę po kliknięciu w przycisk na stronie.
-// fromEvent, 
-const mouseClickCounter$ = fromEvent(document, 'click')
-
-// let counter = 1
-mouseClickCounter$
-  .pipe(scan((counter, ev) => counter + 1, 0))
-  .subscribe(console.log)
+// Licznik kliknięć: emituj kolejną liczbę po kliknięciu w przycisk na document.
+// fromEvent, scan
+const mouseClickCounter$ = null
 
 // Stwórz strumień emitujący co 1s koordynaty myszy na stronie(nie obsługujemy przypadku gdy użytkownik przestał ruszać kursorem myszy)
 // fromEvent, sampleTime, throttleTime
-const mouseMove$ = fromEvent(document, 'mousemove')
-mouseMove$.subscribe(console.log)
+const mouseMove$ = null
 
 // SearchBox Zapisz się na zdarzenie input pola tekstowego (roboczo - jest to wyszukiwarka). 
 // Emituj wpisane wartości gdy użytkownik przerwał wpisywanie na min. 300ms i wartość nie jest pusta.
-// fromEvent, filter, debounceTime(300)
+// fromEvent, filter, debounceTime
 const searchBoxValue$ = fromEvent($('#searchBox')!, 'input')
 
 // Zsumuj wszystkie wartości ze strumienia EUR

@@ -36,7 +36,6 @@ import { writeToHtml } from "./helpers/pipes"
 // źródło danych - nasze api
 const apiData$ = of<Product[]>(apiProducts.products)
 
-
 // elementy z html-a
 const searchProductInput = $('#searchProduct')!
 const paginatePrevBtn = $('#paginatePrev')!

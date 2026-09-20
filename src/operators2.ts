@@ -20,7 +20,6 @@ const votes$ = of('Przygotowanie do głosowania...')
 
 
 
-
 // 2. Korzystając z getUsers() oraz getOrder(orderId: number) pokaż zamówienia użytkowników.
 // Pokaż na stronie nazwę użytkownika oraz jego zamówienie.
 const api = {
