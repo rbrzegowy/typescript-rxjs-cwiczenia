@@ -1,9 +1,9 @@
-import { BehaviorSubject, from, generate, Observable, of, ReplaySubject, Subject } from "rxjs"
-import { pictures } from "./pictures"
+import { BehaviorSubject, from, generate, Observable, of, ReplaySubject, Subject } from 'rxjs'
+import { pictures } from './pictures'
 
 // Zadeklaruj strumień:
 
-// który emituje typ number[]. Jeśli przed subskrypcją nie było emisji, powinien zwrócić pustą tablicę. 
+// który emituje typ number[]. Jeśli przed subskrypcją nie było emisji, powinien zwrócić pustą tablicę.
 const numbers$ = null
 
 // który wyemituje typ string. Subskrybenci dostają tylko wartości emitowane po zapisie.
@@ -16,3 +16,4 @@ const number$ = null
 const pictures$ = null
 
 // który po zapisie wyemituje 10 liczb losowych
+// BONUS liczby losowe emitowane co 500ms (póki co bez operatorów)

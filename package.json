@@ -9,6 +9,10 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "prettier": {
+    "printWidth": 80,
+    "singleQuote": true
+  },
   "devDependencies": {
     "vite": "^8.3.0",
     "typescript": "^7.0.2"

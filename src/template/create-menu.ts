@@ -1,4 +1,4 @@
-import { $ } from "../helpers/dom"
+import { $ } from '../helpers/dom'
 
 export const createMenu = () => {
   const nav = $('nav')!
@@ -8,6 +8,9 @@ export const createMenu = () => {
         </card>
         <card>
           <a href="operators1.html">Podstawowe operatory</a>
+        </card>
+        <card>
+          <a href="custom-operators.html">Własne operatory</a>
         </card>
         <card>
           <a href="operators2.html">Łączenie strumieni</a>

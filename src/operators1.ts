@@ -1,6 +1,6 @@
-import { Subject, interval, map, timer, of, from, fromEvent, count, scan } from "rxjs"
-import { pictures } from "./pictures"
-import { $ } from "./helpers/dom"
+import { Subject, interval, map, timer, of, from, fromEvent, count, scan } from 'rxjs'
+import { pictures } from './pictures'
+import { $ } from './helpers/dom'
 
 // Zamień strumień z kwotami w PLN na kwoty w EUR(map) - kurs euro: const eurRate = 4.4
 // map
@@ -29,7 +29,7 @@ const mouseClickCounter$ = null
 // fromEvent, sampleTime, throttleTime
 const mouseMove$ = null
 
-// SearchBox Zapisz się na zdarzenie input pola tekstowego (roboczo - jest to wyszukiwarka). 
+// SearchBox Zapisz się na zdarzenie input pola tekstowego (roboczo - jest to wyszukiwarka).
 // Emituj wpisane wartości gdy użytkownik przerwał wpisywanie na min. 300ms i wartość nie jest pusta.
 // fromEvent, filter, debounceTime
 const searchBoxValue$ = fromEvent($('#searchBox')!, 'input')

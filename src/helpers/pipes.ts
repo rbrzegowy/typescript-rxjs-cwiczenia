@@ -2,7 +2,7 @@ import { map, pipe, scan, tap } from 'rxjs'
 import { $ } from './dom.ts'
 
 type WriteToHtmlConfig = {
-  add?: InsertPosition,
+  add?: InsertPosition
   customValueFn?: (d: any) => void
 }
 export const writeToHtml = <T>(selector: string, config?: WriteToHtmlConfig) => {
@@ -21,7 +21,7 @@ export const writeToHtml = <T>(selector: string, config?: WriteToHtmlConfig) => 
 }
 export const sumWithLabel = (label: string) =>
   pipe(
-    scan((acc: number, val: number) => acc += val),
+    scan((acc: number, val: number) => (acc += val)),
     map(v => label + '-' + v),
   )
 
