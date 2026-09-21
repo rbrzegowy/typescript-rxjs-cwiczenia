@@ -2,11 +2,6 @@ import { Subject, interval, map, timer, of, from, fromEvent, count, scan } from 
 import { pictures } from "./pictures"
 import { $ } from "./helpers/dom"
 
-const timer$ = new Subject<number>()
-
-interval(86400).pipe(map(() => 'x')).subscribe(console.log)
-timer(0, 1_000).pipe(map(() => 'x')).subscribe(console.log)
-
 // Zamień strumień z kwotami w PLN na kwoty w EUR(map) - kurs euro: const eurRate = 4.4
 // map
 const pln$ = of(100, 200, 300, 400, 500)
