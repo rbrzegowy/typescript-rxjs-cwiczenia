@@ -21,7 +21,8 @@ import {
 
 // Przygotuj unit testy w pliku unit-tests.spec.ts dla poniższych funkcji
 
-// 1. Strumień synchroniczny: mapowanie i filtrowanie wartości.
+// 1. Strumień synchroniczny
+// Mapowanie i filtrowanie wartości.
 export function createEvenNumbers$(values: number[]): Observable<number> {
   return from(values).pipe(
     filter((value) => value % 2 === 0),
@@ -29,7 +30,8 @@ export function createEvenNumbers$(values: number[]): Observable<number> {
   );
 }
 
-// 2. Strumień asynchroniczny: opóźnij każdą wartość o podany czas.
+// 2. Strumień asynchroniczny
+// Opóźnij każdą wartość o podany czas.
 export function createDelayedValues$<T>(
   values: T[],
   delayMs: number,
@@ -37,7 +39,8 @@ export function createDelayedValues$<T>(
   return from(values).pipe(delay(delayMs));
 }
 
-// 3. Timer: odliczaj od 1 do wskazanej liczby, emitując co określony czas.
+// 3. Timer
+// Odliczaj od 1 do wskazanej liczby, emitując co określony czas.
 export function createCountdown$(
   seconds: number,
   intervalMs = 1_000,
@@ -48,12 +51,14 @@ export function createCountdown$(
   );
 }
 
-// 4. Agregacja: emituj sumę po każdej kolejnej wartości.
+// 4. Agregacja
+// Emituj sumę po każdej kolejnej wartości.
 export function createRunningTotal$(values: number[]): Observable<number> {
   return from(values).pipe(scan((total, value) => total + value, 0));
 }
 
-// 5. Debounce: emituj wyszukiwanie dopiero po przerwie w pisaniu.
+// 5. Debounce
+// Emituj wyszukiwanie dopiero po przerwie w pisaniu.
 export function createSearchStream$(
   queries$: Observable<string>,
   debounceMs = 300,
@@ -66,7 +71,8 @@ export function createSearchStream$(
   );
 }
 
-// 6. Łączenie równoległe: każda wartość jest opatrzona nazwą źródła.
+// 6. Łączenie strumieni
+// Każda wartość jest opatrzona nazwą źródła.
 export function createMergedEvents$<T>(
   first$: Observable<T>,
   second$: Observable<T>,
@@ -77,7 +83,8 @@ export function createMergedEvents$<T>(
   );
 }
 
-// 7. combineLatest: emituj aktualny stan formularza po zmianie dowolnego pola.
+// 7. combineLatest
+// Emituj aktualny stan formularza po zmianie dowolnego pola.
 export function createFormState$<T, U>(
   name$: Observable<T>,
   age$: Observable<U>,
@@ -85,7 +92,8 @@ export function createFormState$<T, U>(
   return combineLatest({ name: name$, age: age$ });
 }
 
-// 8. concatMap: realizuj zadania sekwencyjnie, zachowując ich kolejność.
+// 8. concatMap
+// Realizuj zadania sekwencyjnie, zachowując ich kolejność.
 export function createSequentialTasks$<T, R>(
   tasks$: Observable<T>,
   runTask: (task: T) => Observable<R>,
@@ -93,7 +101,8 @@ export function createSequentialTasks$<T, R>(
   return tasks$.pipe(concatMap((task) => runTask(task)));
 }
 
-// 9. switchMap: anuluj poprzednie wyszukiwanie, gdy pojawi się nowe zapytanie.
+// 9. switchMap
+// Anuluj poprzednie wyszukiwanie, gdy pojawi się nowe zapytanie.
 export function createLatestRequest$<T, R>(
   requests$: Observable<T>,
   request: (value: T) => Observable<R>,
@@ -101,7 +110,8 @@ export function createLatestRequest$<T, R>(
   return requests$.pipe(switchMap((value) => request(value)));
 }
 
-// 10. defer i catchError: błąd jest tworzony dopiero przy subskrypcji,
+// 10. defer i catchError
+// błąd jest tworzony dopiero przy subskrypcji,
 // a strumień zwraca wartość zastępczą zamiast kończyć się błędem.
 export function createSafeRequest$<T>(
   request: () => T,
