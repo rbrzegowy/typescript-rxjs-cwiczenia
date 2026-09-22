@@ -1,7 +1,7 @@
-import { $ } from '../helpers/dom'
+import { $ } from '../helpers/dom';
 
 export const createMenu = () => {
-  const nav = $('nav')!
+  const nav = $('nav')!;
   nav.innerHTML = `
         <card>
           <a href="observables.html">Strumienie bazowe</a>
@@ -19,6 +19,9 @@ export const createMenu = () => {
           <a href="operators3.html">Strumienie w strumieniach</a>
         </card>
         <card>
+          <a href="unit-tests.html">Unit testy</a>
+        </card>
+        <card>
           <a href="shop.html">Sklepik</a>
-        </card>`
-}
+        </card>`;
+};

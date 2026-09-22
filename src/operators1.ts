@@ -1,15 +1,25 @@
-import { Subject, interval, map, timer, of, from, fromEvent, count, scan } from 'rxjs'
-import { pictures } from './pictures'
-import { $ } from './helpers/dom'
+import {
+  Subject,
+  interval,
+  map,
+  timer,
+  of,
+  from,
+  fromEvent,
+  count,
+  scan,
+} from 'rxjs';
+import { pictures } from './pictures';
+import { $ } from './helpers/dom';
 
 // Zamień strumień z kwotami w PLN na kwoty w EUR(map) - kurs euro: const eurRate = 4.4
 // map
-const pln$ = of(100, 200, 300, 400, 500)
-const eurRate = 4.4
+const pln$ = of(100, 200, 300, 400, 500);
+const eurRate = 4.4;
 
 // Wybierz ze strumienia pictures wszystkie zdjęcia których szerokość jest większa od 3000px
 // filter
-const picture$ = from(pictures)
+const picture$ = from(pictures);
 
 // Zwróć autora zdjęcia o id = 699
 // find, map
@@ -19,20 +29,20 @@ const picture$ = from(pictures)
 
 // Stwórz strumień emitujący koordynaty myszy na stronie (przy kliknięciu)
 // fromEvent, wykorzystaj właściwość ev.clientX
-const mouseClick$ = null
+const mouseClick$ = null;
 
 // Licznik kliknięć: emituj kolejną liczbę po kliknięciu w przycisk na document.
 // fromEvent, scan
-const mouseClickCounter$ = null
+const mouseClickCounter$ = null;
 
 // Stwórz strumień emitujący co 1s koordynaty myszy na stronie(nie obsługujemy przypadku gdy użytkownik przestał ruszać kursorem myszy)
 // fromEvent, sampleTime, throttleTime
-const mouseMove$ = null
+const mouseMove$ = null;
 
 // SearchBox Zapisz się na zdarzenie input pola tekstowego (roboczo - jest to wyszukiwarka).
 // Emituj wpisane wartości gdy użytkownik przerwał wpisywanie na min. 300ms i wartość nie jest pusta.
 // fromEvent, filter, debounceTime
-const searchBoxValue$ = fromEvent($('#searchBox')!, 'input')
+const searchBoxValue$ = fromEvent($('#searchBox')!, 'input');
 
 // Zsumuj wszystkie wartości ze strumienia EUR
 // scan, reduce

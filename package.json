@@ -7,17 +7,20 @@
     "start": "vite --port 5300",
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run"
   },
   "prettier": {
     "printWidth": 80,
     "singleQuote": true
   },
   "devDependencies": {
+    "typescript": "^7.0.2",
     "vite": "^8.3.0",
-    "typescript": "^7.0.2"
+    "vitest": "^5.0.1"
   },
   "dependencies": {
+    "@vitest/coverage-v8": "^5.0.1",
     "rxjs": "^7.8.2"
   }
 }
