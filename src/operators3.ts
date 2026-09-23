@@ -31,7 +31,7 @@ import { writeToHtml } from './helpers/pipes';
 
 // 1. Uploads
 // Tworzymy wiele procesów upload - wiele api chce być informowanych o zmianach
-// Napisz strumień który zrobi log z urla i odebranych danych.
+// Napisz strumień (zamień endpoints na strumień) który zrobi log z urla i odebranych danych.
 // Do mockowania uploadu użyj funkcji uploadIt
 // Sprawdź czy rozwiązanie obsługuje również asynchroniczne dodawanie uploads (setTimeout - na etapie pisania kodu nie wiemy gdzie i kiedy nastąpi kolejny upload)
 

@@ -1,17 +1,18 @@
-import { from, of, range, Subject, takeWhile } from 'rxjs'
+import { from, of, range, Subject, takeWhile } from 'rxjs';
 // 1. Napisz operator filtrujący null i undefined z wartości w strumieniu
 // Test:
 // from([0,'',null,1,'a',{},undefined,[]]).pipe(filterNullUndefined()).subscribe()
 
 // 2. Napisz operator htmlOutput który wyświetli w html-u wartość ze strumienia.
+// zmiana zawartości elementu w html: document.querySelector('selector').innerHTML = 'hello world'
 // Test:
-// of('hello world').pipe(htmlOutput('#container')).subscribe()
+// of('hello world').pipe(htmlOutput('#container')).subscribe();
 
 // 3. Napisz operator tapIf wykonujący efekt uboczny tylko dla wartości spełniających podany warunek.
 // Test:
 // of(5, 15, 20, 3).pipe(tapIf(v => v > 10, v => console.log('Większe niż 10:', v))).subscribe()
 
-// 4. Napisz operator debug debugujący wartości, błędy i zakończenie strumienia. W parametrze przyjmuje etykietę do późniejszego logu
+// 4. Napisz operator debugujący wartości, błędy i zakończenie strumienia. Operator w parametrze powinien przyjmować etykietę do późniejszego logu
 // Efekt działania w konsoli:
 // [numbers] next: 1
 // [numbers] completed
@@ -24,8 +25,8 @@ import { from, of, range, Subject, takeWhile } from 'rxjs'
 // // subject.error('błąd dla testu operatora debug')
 // subject.complete()
 
-// 5. Napisz operator bufferUntil buforujący wartości i emitujący bufor, gdy wartość spełni podany warunek.
-// Jeśli źródło robi complete - zrób complete, wcześniej wyemituj bufor (nawet niepełny)
+// 5. Napisz operator bufferUntil buforujący wartości w tablicy i emitujący bufor, gdy wartość ze strumienia źródłowego spełni podany warunek.
+// BONUS: Jeśli źródło robi complete - zrób complete, wcześniej wyemituj bufor (nawet niepełny)
 // Test:
 // range(1, 20).pipe(
 //  takeWhile(v => v < 18),

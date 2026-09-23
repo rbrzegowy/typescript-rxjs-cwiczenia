@@ -36,11 +36,19 @@ import { writeToHtml } from './helpers/pipes';
 // BONUS: Zmodyfikuj kod by głosy były losowe (pamiętaj by nie duplikować kodu).
 // BONUS2: Wypisz w konsoli/na  ekranie: Głosowanie rozpoczęte -> Głosowanie zakończone (przez 2s) -> Wyniki głosowania: ''
 
+const vote1$ = timer(1_000).pipe(map(() => 'za'));
+const vote2$ = of('za').pipe(delay(2_000));
+
 const votes$ = of('Przygotowanie do głosowania...')
   .pipe(writeToHtml('#voting-state'))
   .subscribe();
 
-// 2. Korzystając z getUsers() oraz getOrder(orderId: number) pokaż zamówienia użytkowników.
+// 2. Stwórz strumień emitujący koordynaty myszy, emisja co 1s - również gdy kursor nie zmienia położenia
+// Zastanów się jak zrobić to ćwiczenie jeśli:
+// a) emisja powinna się zacząć z pierwszym ruchem myszy
+// b) emisja jest co 1s, niezależna od wcześniejszego ruchu myszy
+
+// 3. Korzystając z getUsers() oraz getOrder(orderId: number) pokaż zamówienia użytkowników.
 // Pokaż na stronie nazwę użytkownika oraz jego zamówienie.
 const api = {
   users: [
@@ -71,7 +79,7 @@ const orders$ = of('brak')
   )
   .subscribe();
 
-// 3. Kantor. Klienci proszą o wymianę pln na eur. Kwoty są w pln$.
+// 4. Kantor. Klienci proszą o wymianę pln na eur. Kwoty są w pln$.
 // Zamień pln na kwoty w EUR wg aktualnego kursu (wartość z eurRate$).
 // Wypisz wynik w formacie: 'PLN: 100 -> EUR: 23, RATE: 4.3'
 const plns = [100, 200, 300, 400, 500];
@@ -93,7 +101,7 @@ eurRate$.subscribe((eurRate) => console.log('Kurs EUR:', eurRate));
 const eur$ = of('centuś zaprasza!');
 eur$.pipe(writeToHtml('#transactions')).subscribe(console.log);
 
-// 4. Media player
+// 5. Media player
 // Stwórz media player - trzy przyciski "toggle audio", "toggle video".
 // W konsoli wypisz które media są aktualnie używane.
 // Strumień powinien emitować 'wyłączony' | 'audio' | 'video' | 'audio-video' (domyślnie: 'wyłączony')
@@ -106,8 +114,3 @@ const btnOnOff = $('#btn-player-on-off')!;
 const media$ = of('wyłączony')
   .pipe(writeToHtml('#media-player-state'))
   .subscribe();
-
-// 5. Stwórz strumień emitujący koordynaty myszy, emisja co 1s - również gdy kursor nie zmienia położenia
-// Zastanów się jak zrobić to ćwiczenie jeśli:
-// a) emisja powinna się zacząć z pierwszym ruchem myszy
-// b) emisja jest co 1s, niezależna od wcześniejszego ruchu myszy
